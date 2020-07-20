@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>222264778675-r2fnb03vu8b2obr4el3293n5cfe7gohq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.222264778675-r2fnb03vu8b2obr4el3293n5cfe7gohq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7Wd1WD9aldmZf_NUNYG7aWCPLGTjbqhc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>222264778675</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Suhong.YoutubePlayer</string>
+	<key>PROJECT_ID</key>
+	<string>swiftplayer-fcf96</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiftplayer-fcf96.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:222264778675:ios:bbaacdf04b33e7cdc035c6</string>
+	<key>DATABASE_URL</key>
+	<string>https://swiftplayer-fcf96.firebaseio.com</string>
+</dict>
+</plist>
