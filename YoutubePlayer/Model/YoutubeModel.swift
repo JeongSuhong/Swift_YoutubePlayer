@@ -8,9 +8,16 @@
 
 import Foundation
 
+protocol ModelDelegate {
+    
+    func videoFetched(_ videos: [YoutubeVideoData])
+}
+
 class YoutubeModel {
     
-    func getVideos() {
+    var delegate: ModelDelegate?
+    
+    func getVideos(){
         guard let url = URL(string: YoutubeCommonData.API_URL) else { return }
         
         let session = URLSession.shared
@@ -18,13 +25,29 @@ class YoutubeModel {
             
             if error != nil || data == nil { return }
             
-            guard let jsonToArray = try? JSONSerialization.jsonObject(with: data!) else {
-                     print("json to Any Error")
-                     return
-                 }
+            do {
+                
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let response = try decoder.decode(YoutubeResponse.self, from: data!)
             
-                 print(jsonToArray)
+            // dump = print 보다 더 상세한 Log 출력
+            dump(response)
+                
+                if response.items != nil {
+                    
+                    // DispatchQueue = 해당 Task를 처리하는 Thread 와 관련된 class
+                    DispatchQueue.global().async {
+                        self.delegate?.videoFetched(response.items!)
+                    }
+                }
+                
+            } catch {
+                
+            }
+            
              }
+        
              dataTask.resume()
 
     }
