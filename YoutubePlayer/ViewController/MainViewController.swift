@@ -25,6 +25,15 @@ class MainViewController : UIViewController {
         youtubeModel.delegate = self
         youtubeModel.getVideos()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        guard tableView.indexPathForSelectedRow != nil else { return }
+        
+        let selectedVideo = youtubeVideos[tableView.indexPathForSelectedRow!.row]
+        let detailVC = segue.destination as! DetailViewController
+        detailVC.video = selectedVideo
+    }
 }
 
     // MARK: - Table view
@@ -36,8 +45,8 @@ class MainViewController : UIViewController {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: UIData.YOUTUBE_VIDEO_CELL_ID, for: indexPath)
-            cell.textLabel?.text = self.youtubeVideos[indexPath.row].title
+            let cell = tableView.dequeueReusableCell(withIdentifier: UIData.YOUTUBE_VIDEO_CELL_ID, for: indexPath) as! VideoTableViewCell
+            cell.setCell(youtubeVideos[indexPath.row])
             
             return cell
         }

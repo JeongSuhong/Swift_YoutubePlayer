@@ -32,11 +32,12 @@ class YoutubeModel {
             let response = try decoder.decode(YoutubeResponse.self, from: data!)
             
             // dump = print 보다 더 상세한 Log 출력
-            dump(response)
+            // dump(response)
                 
                 if response.items != nil {
                     
                     // DispatchQueue = 해당 Task를 처리하는 Thread 와 관련된 class
+                    // 차후 RxSwift 적용
                     DispatchQueue.global().async {
                         self.delegate?.videoFetched(response.items!)
                     }
