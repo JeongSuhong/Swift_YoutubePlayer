@@ -6,10 +6,6 @@ target 'YoutubePlayer' do
   use_frameworks!
 
   # Pods for YoutubePlayer
-
-    pod 'GoogleAPIClientForREST/YouTube', '~> 1.2.1'
-    pod 'Google/SignIn', '~> 3.0.3'
-    pod 'Firebase/Analytics'
     
 
 end
