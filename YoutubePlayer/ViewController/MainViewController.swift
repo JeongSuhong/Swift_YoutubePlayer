@@ -13,17 +13,16 @@ class MainViewController : UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var youtubeModel = YoutubeModel()
-    var youtubeVideos = [YoutubeVideoData]()
+    var youtubeVM = YoutubeViewModel()
+    var youtubeVideos = [YoutubeVideoModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        tableView.delegate = self
         
-        youtubeModel.delegate = self
-        youtubeModel.getVideos()
+        youtubeVM.delegate = self
+        youtubeVM.getPlaylistItems()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,17 +51,17 @@ class MainViewController : UIViewController {
         }
 }
 
-extension MainViewController: UITableViewDelegate {
-    
-}
-
 
     // MARK: - Video Delegate
-extension MainViewController: ModelDelegate {
+extension MainViewController: YoutubeViewModelProtocol {
     
-    func videoFetched(_ videos: [YoutubeVideoData]) {
+    func videoFetched(_ videos: [YoutubeVideoModel]) {
         self.youtubeVideos = videos
-        tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
     }
 
 }

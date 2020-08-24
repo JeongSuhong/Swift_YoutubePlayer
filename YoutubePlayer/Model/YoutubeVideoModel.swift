@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct YoutubeVideoData: Decodable {
+struct YoutubeVideoModel: Decodable {
     
     var videoId = ""
     var title = ""
@@ -18,6 +18,7 @@ struct YoutubeVideoData: Decodable {
     
     // CodingKeys = JSON의 Key이름과 변수 이름을 다르게 사용하고 싶을때 쓰임.
     enum CodingKeys: String, CodingKey {
+        case items
         
         case snippet
         case thumbnails

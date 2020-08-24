@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol ModelDelegate {
+protocol YoutubeViewModelProtocol {
     
-    func videoFetched(_ videos: [YoutubeVideoData])
+    func videoFetched(_ videos: [YoutubeVideoModel])
 }
 
-class YoutubeModel {
+class YoutubeViewModel {
     
-    var delegate: ModelDelegate?
+    var delegate: YoutubeViewModelProtocol?
     
-    func getVideos(){
+    func getPlaylistItems(){
         guard let url = URL(string: YoutubeCommonData.API_URL) else { return }
         
         let session = URLSession.shared
@@ -44,7 +44,7 @@ class YoutubeModel {
                 }
                 
             } catch {
-                
+                print("Error GetPlaylistItems")
             }
             
              }

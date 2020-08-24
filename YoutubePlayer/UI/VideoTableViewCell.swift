@@ -16,11 +16,15 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var channelThumbnailImageView: UIImageView!
     @IBOutlet weak var playTimeLabel: UITextField!
     
-    var videoData: YoutubeVideoData?
+    var videoData: YoutubeVideoModel?
+    
+    let thumbnailVM = ThumbanilViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        thumbnailVM.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,7 +33,7 @@ class VideoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ video: YoutubeVideoData) {
+    func setCell(_ video: YoutubeVideoModel) {
         
         self.videoData = video
         guard self.videoData != nil else { return }
@@ -45,27 +49,18 @@ class VideoTableViewCell: UITableViewCell {
         if let cache = CacheManager.getVideoCache(self.videoData!.thumnail) {
             self.thumbnailImageView.image = UIImage(data: cache)
         } else {
-        
-        let url = URL(string: self.videoData!.thumnail)
-        let session = URLSession.shared
-        let dateTask = session.dataTask(with: url!) { (data, response, error) in
-            
-            if error == nil && data != nil {
-                
-                CacheManager.setVideoCache(url!.absoluteString, data)
-                
-                if url!.absoluteString != self.videoData!.thumnail { return }
-                
-                let thumbnail = UIImage(data: data!)
-                
-                DispatchQueue.main.async {
-                    self.thumbnailImageView.image = thumbnail
-                }
-            }
-        }
-        
-        dateTask.resume()
+            self.thumbnailVM.getThumbnail(self.videoData!.thumnail)
         }
     }
+}
 
+// MARK - Thumbnail View Model Protocol
+extension VideoTableViewCell : ThumbanilViewModelProtocol {
+    
+    func thumbanilUpdated(_ thumbnail: Data) {
+        DispatchQueue.main.async {
+         self.thumbnailImageView.image = UIImage(data: thumbnail)
+        }
+    }
+    
 }

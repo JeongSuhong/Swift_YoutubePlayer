@@ -10,7 +10,7 @@ import Foundation
 
 struct YoutubeResponse : Decodable {
     
-    var items: [YoutubeVideoData]?
+    var items: [YoutubeVideoModel]?
     
     enum CodingKeys: String, CodingKey {
         
@@ -21,7 +21,7 @@ struct YoutubeResponse : Decodable {
     init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.items = try container.decode([YoutubeVideoData].self, forKey: .items)
+        self.items = try container.decode([YoutubeVideoModel].self, forKey: .items)
     }
     
 }
