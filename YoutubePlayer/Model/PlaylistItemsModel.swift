@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct YoutubeVideoModel: Decodable {
+struct PlaylistItemsModel: Decodable {
     
     var videoId = ""
     var title = ""

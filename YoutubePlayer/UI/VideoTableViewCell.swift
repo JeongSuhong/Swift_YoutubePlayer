@@ -16,7 +16,7 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var channelThumbnailImageView: UIImageView!
     @IBOutlet weak var playTimeLabel: UITextField!
     
-    var videoData: YoutubeVideoModel?
+    var videoData: PlaylistItemsModel?
     
     let thumbnailVM = ThumbanilViewModel()
     
@@ -33,7 +33,7 @@ class VideoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ video: YoutubeVideoModel) {
+    func setCell(_ video: PlaylistItemsModel) {
         
         self.videoData = video
         guard self.videoData != nil else { return }

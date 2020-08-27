@@ -14,7 +14,7 @@ class MainViewController : UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var youtubeVM = YoutubeViewModel()
-    var youtubeVideos = [YoutubeVideoModel]()
+    var youtubeVideos = [PlaylistItemsModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class MainViewController : UIViewController {
     // MARK: - Video Delegate
 extension MainViewController: YoutubeViewModelProtocol {
     
-    func videoFetched(_ videos: [YoutubeVideoModel]) {
+    func videoFetched(_ videos: [PlaylistItemsModel]) {
         self.youtubeVideos = videos
         
         DispatchQueue.main.async {

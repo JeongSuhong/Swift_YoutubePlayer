@@ -10,7 +10,7 @@ import Foundation
 
 protocol YoutubeViewModelProtocol {
     
-    func videoFetched(_ videos: [YoutubeVideoModel])
+    func videoFetched(_ videos: [PlaylistItemsModel])
 }
 
 class YoutubeViewModel {
@@ -29,7 +29,7 @@ class YoutubeViewModel {
                 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            let response = try decoder.decode(YoutubeResponse.self, from: data!)
+            let response = try decoder.decode(PlaylistItemsResponse.self, from: data!)
             
             // dump = print 보다 더 상세한 Log 출력
             // dump(response)
