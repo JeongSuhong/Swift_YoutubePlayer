@@ -16,7 +16,8 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var channelThumbnailImageView: UIImageView!
     @IBOutlet weak var playTimeLabel: UITextField!
     
-    var videoData: PlaylistItemsModel?
+    var playlistItemData: PlaylistItemsModel?
+    var videosData: VideosModel?
     
     let thumbnailVM = ThumbanilViewModel()
     
@@ -35,22 +36,30 @@ class VideoTableViewCell: UITableViewCell {
     
     func setCell(_ video: PlaylistItemsModel) {
         
-        self.videoData = video
-        guard self.videoData != nil else { return }
+        self.playlistItemData = video
+        guard self.playlistItemData != nil else { return }
         
-        self.titleLabel.text = videoData?.title
+        self.titleLabel.text = playlistItemData?.title
         
         let format = DateFormatter()
         format.dateFormat = "EEEE, MMM, d, yyyy"
-        self.dateLabel.text = format.string(from: videoData!.published)
+        self.dateLabel.text = format.string(from: playlistItemData!.published)
         
-        guard self.videoData?.thumnail != nil else { return }
+        guard self.playlistItemData?.thumnail != nil else { return }
         
-        if let cache = CacheManager.getVideoCache(self.videoData!.thumnail) {
+        if let cache = CacheManager.getVideoCache(self.playlistItemData!.thumnail) {
             self.thumbnailImageView.image = UIImage(data: cache)
         } else {
-            self.thumbnailVM.getThumbnail(self.videoData!.thumnail)
+            self.thumbnailVM.getThumbnail(self.playlistItemData!.thumnail)
         }
+    }
+    
+    func updateCell(_ videos: VideosModel) {
+        
+        self.videosData = videos
+        
+        self.playTimeLabel.text = self.videosData?.duration
+        self.dateLabel.text = "\(self.videosData?.channelTitle ?? "") * 조회수 \(self.videosData?.viewCount ?? "")"
     }
 }
 

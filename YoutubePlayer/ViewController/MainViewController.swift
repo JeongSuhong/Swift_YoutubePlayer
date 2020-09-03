@@ -14,7 +14,10 @@ class MainViewController : UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var youtubeVM = YoutubeViewModel()
-    var youtubeVideos = [PlaylistItemsModel]()
+    
+    // Model Data 나중에 통함 & vidoe Data Manager 생성 필요
+    var playlistItems = [PlaylistItemsModel]()
+    var videoItems = [String : VideosModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ class MainViewController : UIViewController {
     
         guard tableView.indexPathForSelectedRow != nil else { return }
         
-        let selectedVideo = youtubeVideos[tableView.indexPathForSelectedRow!.row]
+        let selectedVideo = playlistItems[tableView.indexPathForSelectedRow!.row]
         let detailVC = segue.destination as! DetailViewController
         detailVC.video = selectedVideo
     }
@@ -39,13 +42,18 @@ class MainViewController : UIViewController {
     extension MainViewController: UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return youtubeVideos.count
+            return playlistItems.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: UIData.YOUTUBE_VIDEO_CELL_ID, for: indexPath) as! VideoTableViewCell
-            cell.setCell(youtubeVideos[indexPath.row])
+            cell.setCell(playlistItems[indexPath.row])
+            
+            let videos = videoItems[playlistItems[indexPath.row].videoId]
+            if videos != nil {
+                cell.updateCell(videos!)
+            }
             
             return cell
         }
@@ -55,13 +63,27 @@ class MainViewController : UIViewController {
     // MARK: - Video Delegate
 extension MainViewController: YoutubeViewModelProtocol {
     
-    func videoFetched(_ videos: [PlaylistItemsModel]) {
-        self.youtubeVideos = videos
+    func playlistItemsFetched(_ videos: [PlaylistItemsModel]) {
+        self.playlistItems = videos
+        
+        for video in self.playlistItems {
+            self.youtubeVM.getVideos(video.videoId)
+        }
+        
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
         
+    }
+    
+    func videoFetched(_ videos: [VideosModel]) {
+        self.videoItems.updateValue(videos[0], forKey: videos[0].id)
+        
+        // test code.
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
 }
