@@ -27,9 +27,7 @@
         <scene sceneID="cmc-h1-EVI">
             <objects>
                 <tabBarController id="d1A-ML-IQi" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="rY5-ea-4mS">
-                        <barButtonItem key="leftBarButtonItem" title="LOGO" springLoaded="YES" id="FRB-f9-70Q"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="rY5-ea-4mS"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7eh-J7-cYr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -139,7 +137,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3tB-oI-4qU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" id="32u-2Z-Ofk"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="32u-2Z-Ofk"/>
                     <connections>
                         <outlet property="tableView" destination="t8o-1L-1SB" id="Vlc-f4-lue"/>
                     </connections>
@@ -158,26 +156,26 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="txN-af-QyU">
-                                <rect key="frame" x="0.0" y="28" width="375" height="282"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="285"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="txN-af-QyU" id="eak-bP-fYB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="arG-7H-x54">
-                                            <rect key="frame" x="10" y="20" width="355" height="242"/>
+                                            <rect key="frame" x="10" y="20" width="355" height="245"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0PG-M5-QFx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="201"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="204"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-O2-elD">
-                                                    <rect key="frame" x="0.0" y="201" width="355" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="204" width="355" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-LT-hdt">
-                                                    <rect key="frame" x="0.0" y="221.5" width="355" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="224.5" width="355" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -199,7 +197,7 @@
                             <outlet property="delegate" destination="3tM-GQ-xhf" id="1vb-Lf-H6r"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="인기" id="sLz-LV-t1b"/>
+                    <tabBarItem key="tabBarItem" title="인기" image="heart.fill" catalog="system" id="sLz-LV-t1b"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0R5-bf-CGF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,7 +213,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZKD-uU-cUY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="검색" id="7yR-CG-11J"/>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="7yR-CG-11J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6R0-aQ-Wgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,4 +285,9 @@
             <point key="canvasLocation" x="-571" y="9"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
 </document>

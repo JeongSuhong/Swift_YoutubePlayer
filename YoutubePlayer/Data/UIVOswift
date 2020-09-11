@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UIData {
+class UIVO {
     
     static var YOUTUBE_VIDEO_CELL_ID = "YoutubeVideoCell"
 }

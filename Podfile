@@ -6,6 +6,7 @@ target 'YoutubePlayer' do
   use_frameworks!
 
   pod 'Kingfisher', '~> 5.15'
+  pod 'Alamofire', '~> 5.2'
 
   # Pods for YoutubePlayer
     
