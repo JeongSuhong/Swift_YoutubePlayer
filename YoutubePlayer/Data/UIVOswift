@@ -10,5 +10,5 @@ import Foundation
 
 class UIVO {
     
-    static var YOUTUBE_VIDEO_CELL_ID = "YoutubeVideoCell"
+    private final let mainVideoCellName = "YoutubeVideoCell"
 }

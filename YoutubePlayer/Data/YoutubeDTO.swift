@@ -17,12 +17,13 @@ class YoutubeDTO {
     private final let playItemsURL = "playlistItems"
     private final let videosURL = "videos"
     
-//    static var MAIN_PLAYLISE_URL = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(self.mainPlaylistId)&key=\(self.apiKey)"
-//
-//
-//    static func getVideosApiUrl(_ videosId: String) -> String
-//    {
-//        return "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=\(videosId)&regionCode=kr&key=\(self.apiKey)"
-//    }
+
+    func getPlayItemsSnippet(playlistId: String) -> String {
+        return "\(youtubeBaseURL)\(playItemsURL)?part=snippet&playlistId=\(playlistId)&key=\(apiKey)"
+    }
     
+    // 국가 코드는 나중에 기기 국가로 바꿀수 있도록
+    func getVideosDetail(id: String) -> String {
+        return "\(youtubeBaseURL)\(playItemsURL)?part=snippet,contentDetails,statistics&id=\(id)&regionCode=kr&key=\(apiKey)"
+    }
 }
