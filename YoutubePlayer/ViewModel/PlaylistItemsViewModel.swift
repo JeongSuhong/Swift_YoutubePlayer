@@ -9,13 +9,15 @@
 import Foundation
 
 protocol PlaylistItemsProtocol {
-    func playlistItemsFetched(_ data: PlaylistItemsModel)
+    func playlistItemsFetched()
     func playlistItemsError(_ error: String)
 }
 
 class PlaylistItemsViewModel {
     
     var delegate: PlaylistItemsProtocol?
+    
+    var items: [playlistItems] = [playlistItems]()
     
     init() {
         let DTO = YoutubeDTO()
@@ -29,15 +31,28 @@ class PlaylistItemsViewModel {
             
             let decoder = JSONDecoder()
             let model = try decoder.decode(PlaylistItemsModel.self, from: data!)
+            self.items = model.items
             
-            self.delegate?.playlistItemsFetched(model)
+            self.delegate?.playlistItemsFetched()
                 
             } catch {
                 self.delegate?.playlistItemsError(error.localizedDescription)
             }
             
             }).resume()
-
+        
+    }
+    
+    func getItemData(rowIndex: Int) -> playlistItems? {
+        guard rowIndex < items.count else {
+            return nil
+        }
+        
+        return items[rowIndex]
+    }
+    
+    func getDataCount() -> Int {
+        return items.count
     }
     
 }

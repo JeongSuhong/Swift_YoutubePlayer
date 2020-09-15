@@ -10,7 +10,7 @@ import Foundation
 
 struct PlaylistItemsModel : Decodable {
     
-    let items: [playlistItems]
+    var items: [playlistItems]
     
     enum CodingKeys: String, CodingKey {
         case items

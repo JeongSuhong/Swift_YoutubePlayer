@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainViewController : UITableViewController {
+class MainTableViewController : UITableViewController {
     
     private let vm = PlaylistItemsViewModel()
     
@@ -20,11 +20,16 @@ class MainViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return vm.getDataCount() + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UIVO.mainVideoCellName, for: indexPath) as! MainTableViewCell
+        guard let data = vm.getItemData(rowIndex: indexPath.row) else {
+            return cell
+        }
+        
+        cell.updateCell(data)
         
         return cell
     }
@@ -32,10 +37,12 @@ class MainViewController : UITableViewController {
 
 
 
-extension MainViewController : PlaylistItemsProtocol {
+extension MainTableViewController : PlaylistItemsProtocol {
     
-    func playlistItemsFetched(_ data: PlaylistItemsModel) {
-        dump(data.items[0])
+    func playlistItemsFetched() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func playlistItemsError(_ error: String) {
