@@ -19,7 +19,6 @@ struct PlaylistItemsModel : Decodable {
     init (from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.items =  try container.decode([playlistItems].self, forKey: .items)
-        
     }
 }
 

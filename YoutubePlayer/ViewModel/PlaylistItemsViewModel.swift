@@ -35,6 +35,7 @@ class PlaylistItemsViewModel {
             
             self.delegate?.playlistItemsFetched()
                 
+                
             } catch {
                 self.delegate?.playlistItemsError(error.localizedDescription)
             }

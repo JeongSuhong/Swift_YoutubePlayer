@@ -17,6 +17,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var channelThumbnailImageView: UIImageView!
     @IBOutlet weak var playTimeLabel: UITextField!
     
+    var channelThumbnailVM: ChannelThumbnailViewModel?
     
     func updateCell(_ data: playlistItems) {
         
@@ -24,6 +25,24 @@ class MainTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         dateLabel.text = data.publishedAt
     
+        self.channelThumbnailVM = ChannelThumbnailViewModel(data.channelId)
+        self.channelThumbnailVM?.delegate = self
     }
  
+}
+
+
+extension MainTableViewCell: ChannelThumbnailProtocol {
+    
+    func channelThubmanilFetched(_ thumbnail: URL) {
+        
+        self.channelThumbnailImageView.kf.setImage(with: thumbnail)
+        
+        self.channelThumbnailVM?.delegate = nil
+        self.channelThumbnailVM = nil
+    }
+    
+    func channelThubmanilError(_ error: String) {
+        print(error)
+    }
 }
