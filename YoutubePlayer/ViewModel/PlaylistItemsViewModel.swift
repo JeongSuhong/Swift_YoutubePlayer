@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Base ViewModel 같은걸로 묶도록.
 protocol PlaylistItemsProtocol {
     func playlistItemsFetched()
     func playlistItemsError(_ error: String)

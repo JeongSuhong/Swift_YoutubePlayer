@@ -20,7 +20,6 @@ class ChannelThumbnailViewModel {
     init(_ id: String) {
           let DTO = YoutubeDTO()
         guard let url = URL(string: DTO.getChannelThumbnail(channelId: id)) else { return }
-        print(url)
           let session = URLSession.shared
           session.dataTask(with: url, completionHandler: { (data, response, error) in
         

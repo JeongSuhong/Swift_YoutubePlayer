@@ -19,7 +19,8 @@ struct ChannelThumbnailModel: Decodable {
         
         init (from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-            self.thumbanil =  try container.decode(channelThumbnail.self, forKey: .items)
+            let thumbnails =  try container.decode([channelThumbnail].self, forKey: .items)
+            self.thumbanil = thumbnails[0]
         }
     }
 
@@ -30,10 +31,10 @@ struct channelThumbnail: Decodable {
     
     enum CodingKeys: String, CodingKey {
        case snippet
-//
-//        case thumbnails
-//        case defaultThumbnail = "default"
-//        case url
+
+        case thumbnails
+        case defaultThumbnail = "default"
+        case url
     }
     
     init (from decoder: Decoder) throws {
@@ -41,10 +42,9 @@ struct channelThumbnail: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
              
         let snippetContainer =  try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .snippet)
-//        let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnails)
-//        let defaultThumbContainer = try thumbnailsContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .defaultThumbnail)
-//        self.url = try defaultThumbContainer.decode(URL.self, forKey: .url)
-        self.url = URL(fileURLWithPath: "")
+        let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnails)
+        let defaultThumbContainer = try thumbnailsContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .defaultThumbnail)
+        self.url = try defaultThumbContainer.decode(URL.self, forKey: .url)
     }
 
 }
