@@ -20,6 +20,8 @@ class MainTableViewCell: UITableViewCell {
     private var channelThumbnailVM: ChannelThumbnailViewModel?
     private var mainVideoSubDataVM: MainVideoSubDataViewModel?
     
+    private var videoId: String?
+    
     func updateCell(_ data: playlistItems) {
         
         thumbnailImageView.kf.setImage(with: data.thumbnailURL)
@@ -44,7 +46,7 @@ class MainTableViewCell: UITableViewCell {
             time = "방금 전"
         }
         
-        dateLabel.text = "\(data.channelTitle) * \(time)"
+        dateLabel.text = "\(data.channelTitle) • \(time)"
     
         self.channelThumbnailVM = ChannelThumbnailViewModel(data.channelId)
         self.channelThumbnailVM?.delegate = self
@@ -83,7 +85,18 @@ extension MainTableViewCell: MainVideoSubDataProtocol {
             durationDate = durationDate.replacingOccurrences(of: "S", with: "")
             self.playTimeLabel.text = durationDate
             
-            self.dateLabel.text = "\(self.dateLabel.text!) * 조회수 \(data.viewCount)"
+            var viewCountKr = ""
+            let viewCountParsing = Int(data.viewCount)
+            if viewCountParsing! >= 100000 {
+                viewCountKr = "조회수 \(viewCountParsing! / 10000)만회"
+            } else if viewCountParsing! >= 10000 {
+                viewCountKr = "조회수 \(Double(viewCountParsing! / 1000) * 0.1)만회"
+            } else if viewCountParsing! >= 1000 {
+                viewCountKr = "조회수 \(Double(viewCountParsing! / 100) * 0.1)천회"
+            } else {
+                viewCountKr = "조회수 \(viewCountParsing!)회"
+            }
+            self.dateLabel.text = "\(self.dateLabel.text!) • \(viewCountKr)"
         }
         self.mainVideoSubDataVM?.delegate = nil
         self.mainVideoSubDataVM = nil

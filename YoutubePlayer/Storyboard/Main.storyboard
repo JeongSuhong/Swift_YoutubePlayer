@@ -186,59 +186,9 @@
                     <view key="view" contentMode="scaleToFill" id="sgA-aH-FEk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bl4-e3-Lus">
-                                <rect key="frame" x="20" y="94" width="335" height="684"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb3-wJ-MTt">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZV-Py-Uno">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="335" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-a7-TqM">
-                                        <rect key="frame" x="0.0" y="40.666666666666643" width="335" height="188.33333333333337"/>
-                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="D0d-a7-TqM" secondAttribute="height" multiplier="1280:720" id="4ZS-iE-pAE"/>
-                                        </constraints>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="247" verticalCompressionResistancePriority="747" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="470-Um-cS9">
-                                        <rect key="frame" x="0.0" y="229" width="335" height="455"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="bl4-e3-Lus" firstAttribute="top" secondItem="f5R-xc-yJA" secondAttribute="top" constant="50" id="8P3-V2-5ho"/>
-                            <constraint firstItem="f5R-xc-yJA" firstAttribute="bottom" secondItem="bl4-e3-Lus" secondAttribute="bottom" id="GT9-DY-krW"/>
-                            <constraint firstItem="f5R-xc-yJA" firstAttribute="trailing" secondItem="bl4-e3-Lus" secondAttribute="trailing" constant="20" id="dZ7-2F-z1i"/>
-                            <constraint firstItem="bl4-e3-Lus" firstAttribute="leading" secondItem="f5R-xc-yJA" secondAttribute="leading" constant="20" id="sm4-jB-bBZ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f5R-xc-yJA"/>
                     </view>
-                    <connections>
-                        <outlet property="dateLabel" destination="jZV-Py-Uno" id="2GO-wp-rK5"/>
-                        <outlet property="textView" destination="470-Um-cS9" id="N9V-B6-1Qq"/>
-                        <outlet property="titleLabel" destination="xb3-wJ-MTt" id="1J8-Zi-CJV"/>
-                        <outlet property="webView" destination="D0d-a7-TqM" id="Lvn-iF-vGq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpu-rU-wPx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

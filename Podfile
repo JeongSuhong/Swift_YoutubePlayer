@@ -7,6 +7,7 @@ target 'YoutubePlayer' do
 
   pod 'Kingfisher', '~> 5.15'
   pod 'Alamofire', '~> 5.2'
+  pod 'youtube-ios-player-helper', '~>1.0.2'
 
   # Pods for YoutubePlayer
     
