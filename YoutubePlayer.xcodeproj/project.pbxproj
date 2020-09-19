@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82505428251644A800048F8A /* DetailVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82505427251644A800048F8A /* DetailVideoViewController.swift */; };
 		8251B9AC24D7EE2A0068D6A8 /* YoutubeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251B9AB24D7EE2A0068D6A8 /* YoutubeDTO.swift */; };
 		8252E3FB24C57E1300EC390A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252E3FA24C57E1300EC390A /* SceneDelegate.swift */; };
 		8252E40224C57E1400EC390A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8252E40124C57E1400EC390A /* Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		826C05BB24DA888800303719 /* UIVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C05BA24DA888800303719 /* UIVO.swift */; };
 		826C05BF24DAA43500303719 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C05BE24DAA43500303719 /* MainTableViewCell.swift */; };
 		826C05C224DBE82A00303719 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C05C124DBE82A00303719 /* CacheManager.swift */; };
-		826C05C424DBFF4A00303719 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C05C324DBFF4A00303719 /* DetailViewController.swift */; };
 		826C05C724DC14D300303719 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826C05C524DC0A7600303719 /* WebKit.framework */; };
 		82867AED2510FE460088FB06 /* ChannelThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82867AEC2510FE460088FB06 /* ChannelThumbnailModel.swift */; };
 		82867AEF251101B60088FB06 /* ChannelThumbnailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82867AEE251101B60088FB06 /* ChannelThumbnailViewModel.swift */; };
@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		13B5FD84C402D302D3B16C1C /* Pods-YoutubePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubePlayer.release.xcconfig"; path = "Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer.release.xcconfig"; sourceTree = "<group>"; };
 		18341E95D093705A585C7A62 /* Pods-YoutubePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubePlayer.debug.xcconfig"; path = "Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		82505427251644A800048F8A /* DetailVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVideoViewController.swift; sourceTree = "<group>"; };
 		8251B9AB24D7EE2A0068D6A8 /* YoutubeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDTO.swift; sourceTree = "<group>"; };
 		8252E3F524C57E1300EC390A /* YoutubePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8252E3FA24C57E1300EC390A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		826C05BA24DA888800303719 /* UIVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVO.swift; sourceTree = "<group>"; };
 		826C05BE24DAA43500303719 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		826C05C124DBE82A00303719 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		826C05C324DBFF4A00303719 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		826C05C524DC0A7600303719 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		82867AEC2510FE460088FB06 /* ChannelThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelThumbnailModel.swift; sourceTree = "<group>"; };
 		82867AEE251101B60088FB06 /* ChannelThumbnailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelThumbnailViewModel.swift; sourceTree = "<group>"; };
@@ -67,6 +67,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8250542925164A4000048F8A /* YoutubePlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YoutubePlayer;
+			sourceTree = "<group>";
+		};
 		8252E3EC24C57E1300EC390A = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +95,7 @@
 		8252E3F724C57E1300EC390A /* YoutubePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8250542925164A4000048F8A /* YoutubePlayer */,
 				82A195D624F399DA000AA69C /* Data */,
 				826C05C024DBE81B00303719 /* Managers */,
 				826C05BD24DAA40100303719 /* UI */,
@@ -107,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				8288304324D19EE60012DF84 /* MainTableViewController.swift */,
-				826C05C324DBFF4A00303719 /* DetailViewController.swift */,
+				82505427251644A800048F8A /* DetailVideoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -299,8 +307,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				826C05C424DBFF4A00303719 /* DetailViewController.swift in Sources */,
 				8288304724D1A80B0012DF84 /* AppDelegate.swift in Sources */,
+				82505428251644A800048F8A /* DetailVideoViewController.swift in Sources */,
 				8290053C2512597600B05E4B /* MainVideoSubDataViewModel.swift in Sources */,
 				8251B9AC24D7EE2A0068D6A8 /* YoutubeDTO.swift in Sources */,
 				828C90AA250F662C00DB48E5 /* PlaylistItemsViewModel.swift in Sources */,
@@ -365,6 +373,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -426,6 +435,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
