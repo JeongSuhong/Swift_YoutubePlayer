@@ -37,4 +37,9 @@ class YoutubeDTO {
     func getMainVideoSubData(videoId: String) -> String {
         return "\(youtubeBaseURL)\(videosURL)?part=contentDetails,statistics&id=\(videoId)&regionCode=kr&key=\(apiKey)"
     }
+    
+    func getChannelData(channelId: String) -> String {
+        return "\(youtubeBaseURL)\(channelsURL)?part=snippet,statistics&id=\(channelId)&key=\(apiKey)"
+    }
+
 }

@@ -182,7 +182,7 @@
         <!--Detail Video View Controller-->
         <scene sceneID="fbh-zh-Dzc">
             <objects>
-                <viewController id="JTI-CA-oNU" customClass="DetailVideoViewController" customModule="YoutubePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DetailVideoVC" id="JTI-CA-oNU" customClass="DetailVideoViewController" customModule="YoutubePlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sgA-aH-FEk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,16 +195,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-zU-d1m">
-                                <rect key="frame" x="0.0" y="265" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="265" width="375" height="68.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영상 이름" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-2U-sYg">
-                                        <rect key="frame" x="15" y="0.0" width="310" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="15" y="0.0" width="310" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영상 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je0-ZE-cKZ">
-                                        <rect key="frame" x="15" y="40" width="310" height="21"/>
+                                        <rect key="frame" x="15" y="37.666666666666686" width="310" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -222,7 +222,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7V-6i-Efl">
-                                <rect key="frame" x="0.0" y="336" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="333.66666666666669" width="375" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBv-6p-Sn3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -239,13 +239,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채널 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpg-FU-VeX">
-                                        <rect key="frame" x="70" y="10" width="81" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <rect key="frame" x="70" y="10" width="73.666666666666686" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독자 수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42L-JT-O8N">
-                                        <rect key="frame" x="70" y="39" width="81" height="21"/>
+                                        <rect key="frame" x="70" y="39" width="73.666666666666686" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -278,7 +278,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-9l-2Gv">
-                                <rect key="frame" x="0.0" y="406" width="375" height="101"/>
+                                <rect key="frame" x="0.0" y="403.66666666666669" width="375" height="101"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1v-Mm-upY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -307,7 +307,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 길이" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNM-gf-Rja">
-                                        <rect key="frame" x="65" y="55.666666666666693" width="302" height="20.333333333333336"/>
+                                        <rect key="frame" x="65" y="55.666666666666636" width="302" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -341,7 +341,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tXI-XN-bph">
-                                <rect key="frame" x="0.0" y="507" width="375" height="305"/>
+                                <rect key="frame" x="0.0" y="504.66666666666674" width="375" height="307.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="YoutubeVideoCell" id="Shh-Fb-WXt" customClass="MainTableViewCell" customModule="YoutubePlayer" customModuleProvider="target">
@@ -417,6 +417,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="TMg-ka-fr4" firstAttribute="trailing" secondItem="f5R-xc-yJA" secondAttribute="trailing" id="9pm-Wg-ydt"/>
                             <constraint firstItem="q7V-6i-Efl" firstAttribute="top" secondItem="zgf-zU-d1m" secondAttribute="bottom" id="BIc-h4-0er"/>
@@ -436,12 +437,25 @@
                             <constraint firstItem="tXI-XN-bph" firstAttribute="leading" secondItem="f5R-xc-yJA" secondAttribute="leading" id="zhh-rj-Br0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f5R-xc-yJA"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BRi-BH-LeK" appends="YES" id="EIx-0t-YYO"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="channelThumbnail" destination="48E-P3-6RD" id="84O-A2-JBe"/>
+                        <outlet property="channelTitleLabel" destination="fpg-FU-VeX" id="MKI-J9-9zy"/>
+                        <outlet property="subscriberCountLabel" destination="42L-JT-O8N" id="CA5-ej-rz1"/>
+                        <outlet property="titleLabel" destination="xsL-2U-sYg" id="6gw-MK-kTX"/>
+                        <outlet property="videoDataLabel" destination="je0-ZE-cKZ" id="P7M-Pl-ti6"/>
                         <outlet property="videoView" destination="TMg-ka-fr4" id="EFp-lF-QCH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpu-rU-wPx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="BRi-BH-LeK">
+                    <connections>
+                        <action selector="closeScene:" destination="JTI-CA-oNU" id="BLR-M4-QIE"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-572" y="8.8669950738916263"/>
         </scene>

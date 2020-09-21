@@ -19,6 +19,18 @@ class MainTableViewController : UITableViewController {
         vm.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if let cell = sender as? UITableViewCell {
+             if let detailVC = segue.destination as? DetailVideoViewController {
+                if let indexPath = self.tableView.indexPath(for: cell) {
+                    if let data = vm.getItemData(rowIndex: indexPath.row) {
+                    detailVC.setData(videoId: data.videoId, channelId: data.channelId)
+                    }
+                 }
+             }
+         }
+     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm.getDataCount() + 1
     }
@@ -33,6 +45,8 @@ class MainTableViewController : UITableViewController {
         
         return cell
     }
+
+    
 }
 
 

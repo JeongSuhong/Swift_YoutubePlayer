@@ -20,9 +20,13 @@ class MainTableViewCell: UITableViewCell {
     private var channelThumbnailVM: ChannelThumbnailViewModel?
     private var mainVideoSubDataVM: MainVideoSubDataViewModel?
     
-    private var videoId: String?
+    var videoId = "" 
+    var channelId = ""
     
     func updateCell(_ data: playlistItems) {
+        
+        videoId = data.videoId
+        channelId = data.channelId
         
         thumbnailImageView.kf.setImage(with: data.thumbnailURL)
         titleLabel.text = data.title
