@@ -13,8 +13,12 @@ class MainTableViewController : UITableViewController {
     
     private let vm = PlaylistItemsViewModel()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         
         vm.delegate = self
     }
@@ -45,6 +49,15 @@ class MainTableViewController : UITableViewController {
         
         return cell
     }
+    
+    @objc func handleRefreshControl() {
+        
+       DispatchQueue.main.async {
+        self.tableView.reloadData()
+        self.tableView.refreshControl?.endRefreshing()
+       }
+    }
+
 
     
 }
