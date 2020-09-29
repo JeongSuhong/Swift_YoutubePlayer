@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZu-OA-NMT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3523" y="9"/>
+            <point key="canvasLocation" x="-3470" y="9"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cmc-h1-EVI">

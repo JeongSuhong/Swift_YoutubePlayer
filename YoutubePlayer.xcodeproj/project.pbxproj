@@ -216,6 +216,7 @@
 				8252E3F224C57E1300EC390A /* Frameworks */,
 				8252E3F324C57E1300EC390A /* Resources */,
 				85408377A71AD91E3420F15B /* [CP] Embed Pods Frameworks */,
+				8AFFE5CFF8F2C414595BF958 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +289,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AFFE5CFF8F2C414595BF958 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91CF735B946B05E4D8376D27 /* [CP] Check Pods Manifest.lock */ = {

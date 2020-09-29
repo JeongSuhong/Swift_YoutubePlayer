@@ -22,6 +22,8 @@ class PlaylistItemsViewModel {
     
     init() {
         let DTO = YoutubeDTO()
+        
+        // AF 로 변경 필요.
         guard let url = URL(string: DTO.getPlayItemsSnippet(playlistId: DTO.mainPlaylistId)) else { return }
         let session = URLSession.shared
         session.dataTask(with: url, completionHandler: { (data, response, error) in
