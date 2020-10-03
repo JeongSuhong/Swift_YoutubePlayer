@@ -5,11 +5,11 @@ target 'YoutubePlayer' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Kingfisher', '~> 5.15'
-  pod 'Alamofire', '~> 5.2'
-  pod 'youtube-ios-player-helper', '~>1.0.2'
-  pod 'GoogleAPIClientForREST/YouTube', '~> 1.2.1'
-  pod 'Google/SignIn', '~> 3.0.3'
+  pod 'Kingfisher'
+  pod 'Alamofire'
+  pod 'youtube-ios-player-helper'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   # Pods for YoutubePlayer
     
