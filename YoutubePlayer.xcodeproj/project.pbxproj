@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8222D19925287AF200BEA3C5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222D19825287AF200BEA3C5 /* StartViewController.swift */; };
 		82505428251644A800048F8A /* DetailVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82505427251644A800048F8A /* DetailVideoViewController.swift */; };
 		8251B9AC24D7EE2A0068D6A8 /* YoutubeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251B9AB24D7EE2A0068D6A8 /* YoutubeDTO.swift */; };
 		8252E3FB24C57E1300EC390A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252E3FA24C57E1300EC390A /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		13B5FD84C402D302D3B16C1C /* Pods-YoutubePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubePlayer.release.xcconfig"; path = "Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer.release.xcconfig"; sourceTree = "<group>"; };
 		18341E95D093705A585C7A62 /* Pods-YoutubePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubePlayer.debug.xcconfig"; path = "Target Support Files/Pods-YoutubePlayer/Pods-YoutubePlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		8222D19825287AF200BEA3C5 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		82505427251644A800048F8A /* DetailVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVideoViewController.swift; sourceTree = "<group>"; };
 		8251B9AB24D7EE2A0068D6A8 /* YoutubeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDTO.swift; sourceTree = "<group>"; };
 		8252E3F524C57E1300EC390A /* YoutubePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 			children = (
 				8288304324D19EE60012DF84 /* MainTableViewController.swift */,
 				82505427251644A800048F8A /* DetailVideoViewController.swift */,
+				8222D19825287AF200BEA3C5 /* StartViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				828C90A8250F2BAA00DB48E5 /* PlaylistItemsModel.swift in Sources */,
 				82AB70E12518F2390002B3D7 /* ChannelsViewModel.swift in Sources */,
 				8288304424D19EE60012DF84 /* MainTableViewController.swift in Sources */,
+				8222D19925287AF200BEA3C5 /* StartViewController.swift in Sources */,
 				826C05BB24DA888800303719 /* UIVO.swift in Sources */,
 				82867AED2510FE460088FB06 /* ChannelThumbnailModel.swift in Sources */,
 				826C05BF24DAA43500303719 /* MainTableViewCell.swift in Sources */,
